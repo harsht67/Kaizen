@@ -1,9 +1,12 @@
 import './App.scss';
+import Shop from './Shop';
 
 function App() {
   return (
-    <div className="App">
-      Kaizen
+    <div className="app">
+
+      <Shop />
+
     </div>
   );
 }
