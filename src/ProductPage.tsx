@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { useFetch } from "./hooks/useFetch";
 import Button from "./components/Button/Button";
 import LoadingSpinner from "./components/LoadingSpinner/LoadingSpinner";
+import PageLayout from "./PageLayout";
 
 interface Product {
     title: string;
@@ -19,7 +20,7 @@ export default function ProductPage() {
     const { data, error, loading } = useFetch<Product>(`https://fakestoreapi.com/products/${productId}`);
 
     if (loading) {
-        return <LoadingSpinner/>
+        return <LoadingSpinner />
     }
 
     if (error || !data) {
@@ -31,29 +32,31 @@ export default function ProductPage() {
     const { image, title, description, price } = data;
 
     return (
-        <article className="product-page">
+        <PageLayout>
+            <article className="product-page">
 
-            <figcaption className="product-page__image">
-                <img src={image} alt="product image" />
-            </figcaption>
+                <figcaption className="product-page__image">
+                    <img src={image} alt="product image" />
+                </figcaption>
 
-            <section className="product-page__details">
+                <section className="product-page__details">
 
-                <header>
-                    <h1 className="product-page__title">{title}</h1>
-                    <p className="product-page__price">${price}</p>
-                </header>
+                    <header>
+                        <h1 className="product-page__title">{title}</h1>
+                        <p className="product-page__price">${price}</p>
+                    </header>
 
-                <div className="product-page__buttons">
-                    <Button color="blue">Add to Cart</Button>
-                    <Button color="teal">Buy Now</Button>
-                </div>
+                    <div className="product-page__buttons">
+                        <Button color="blue">Add to Cart</Button>
+                        <Button color="teal">Buy Now</Button>
+                    </div>
 
-                <p className="product-page">
-                    {description}
-                </p>
+                    <p className="product-page">
+                        {description}
+                    </p>
 
-            </section>
+                </section>
 
-        </article>)
+            </article>
+        </PageLayout>)
 }

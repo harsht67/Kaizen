@@ -1,3 +1,4 @@
+import PageLayout from "./PageLayout";
 import { Product } from "./Product";
 import "./Shop.scss";
 import LoadingSpinner from "./components/LoadingSpinner/LoadingSpinner";
@@ -16,7 +17,7 @@ export default function Shop() {
     const { data, error, loading } = useFetch<Product[]>("https://fakestoreapi.com/products");
 
     if (loading) {
-        return <LoadingSpinner/>
+        return <LoadingSpinner />
     }
 
     if (error || !data) {
@@ -24,12 +25,12 @@ export default function Shop() {
     }
 
     return (
-        <section className="shop">
-
-            {
-                data.map((product: Product) => <Product key={product.id} data={product} />)
-            }
-
-        </section>
+        <PageLayout>
+            <div className="shop">
+                {
+                    data.map((product: Product) => <Product key={product.id} data={product} />)
+                }
+            </div>
+        </PageLayout>
     )
 }
