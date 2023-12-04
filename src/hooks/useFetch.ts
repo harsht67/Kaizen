@@ -23,7 +23,7 @@ export const useFetch = <T>(url: string) => {
 
     useEffect(() => {
         fetchData();
-    }, [fetchData]);
+    }, []);
 
     return {data, error, loading};
 }

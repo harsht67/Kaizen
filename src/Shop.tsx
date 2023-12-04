@@ -1,5 +1,6 @@
 import { Product } from "./Product";
 import "./Shop.scss";
+import LoadingSpinner from "./components/LoadingSpinner/LoadingSpinner";
 
 import { useFetch } from './hooks/useFetch'
 
@@ -15,7 +16,7 @@ export default function Shop() {
     const { data, error, loading } = useFetch<Product[]>("https://fakestoreapi.com/products");
 
     if (loading) {
-        return <div>Loading...</div>
+        return <LoadingSpinner/>
     }
 
     if (error || !data) {
