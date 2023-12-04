@@ -1,0 +1,14 @@
+@import "../../mixins";
+
+.footer {
+    padding: 1rem 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+
+    .footer__nav {
+        @include nav;
+    }
+}
