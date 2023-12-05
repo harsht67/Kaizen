@@ -11,6 +11,15 @@
         padding: 1rem;
     }
 
+    .header__menu-button {
+        font-size: 1.45rem;
+        display: none;
+
+        @include media(small) {
+            display: block;
+        }
+    }
+
     .header__logo {
         font-weight: 900;
 
@@ -39,15 +48,41 @@
             font-size: 1.3rem;
         }
 
-        .header__menu-button {
-            font-size: 1.45rem;
-            display: none;
+    }
 
-            @include media(small) {
-                display: block;
+    .header__menu {
+        position: fixed;
+        inset: 0;
+        right: 100%;
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.5);
+        transition: all 0.15s;
+
+        .menu {
+            width: 60%;
+            height: 100%;
+            background-color: #fff;
+            display: flex;
+            flex-flow: column;
+            align-items: flex-end;
+
+            .menu__close-button {
+                margin: 1rem;
+                color: #f00;
+                font-size: 2rem;
+                cursor: pointer;
+                margin-block-end: 2rem;
+            }
+
+            .menu__content {
+                width: 100%;
+                font-size: 1.25rem;
             }
         }
 
     }
 
+    .header__menu--open {
+        right: 0;
+    }
 }
