@@ -1,7 +1,7 @@
 import "./Login.scss";
 
 import * as Yup from "yup";
-import { Formik, ErrorMessage } from "formik";
+import { Formik, ErrorMessage, Field, Form } from "formik";
 import { Link } from "react-router-dom";
 
 export default function Login() {
@@ -29,23 +29,22 @@ export default function Login() {
       >
         {
           (formik) => {
-            const { handleChange, handleSubmit, handleBlur, dirty, isValid } = formik;
+            const { errors, touched, dirty, isValid } = formik;
             return (
               <article className="login">
                 <h1 className="title">Login</h1>
 
-                <form onSubmit={handleSubmit}>
+                <Form>
 
                   <div>
                     <label htmlFor="email">
                       Email
                     </label>
-                    <input
+                    <Field
                       type="email"
                       name="email"
                       id="email"
-                      onChange={handleChange}
-                      onBlur={handleBlur}
+                      className={errors.email && touched.email && "input--error"}
                     />
                     <ErrorMessage name="email" component="span" className="error" />
                   </div>
@@ -54,12 +53,11 @@ export default function Login() {
                     <label htmlFor="password">
                       Password
                     </label>
-                    <input
+                    <Field
                       type="password"
                       name="password"
                       id="password"
-                      onChange={handleChange}
-                      onBlur={handleBlur}
+                      className={errors.password && touched.password && "input--error"}
                     />
                     <ErrorMessage name="password" component="span" className="error" />
                   </div>
@@ -67,13 +65,14 @@ export default function Login() {
                   <button 
                     type="submit"
                     disabled={!(dirty && isValid)}
+                    className={!(dirty && isValid) ? "button--disabled" : ""}
                   >
                     Login
                   </button>
 
-                </form>
+                </Form>
 
-                <p className="link">Don't have an account? <Link to="/signup">Sign up</Link></p>
+                <p className="link">Don't have an account? <Link to="/signup">Signup</Link></p>
 
               </article>)
           }

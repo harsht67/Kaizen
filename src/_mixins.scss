@@ -16,7 +16,6 @@ $breakpoints: (
 @mixin form {
   width: 40%;
   margin: 2rem auto;
-  // border: 1px solid #000;
   padding: 1rem 2rem 2rem;
 
   @include media(small) {
@@ -44,6 +43,11 @@ $breakpoints: (
     border: 1px solid #000;
     padding: 0.5em;
     font-size: 1rem;
+    outline: none;
+  }
+
+  .input--error {
+    border: 1px solid #f00;
   }
 
   .error {
@@ -58,6 +62,11 @@ $breakpoints: (
     padding: 0.55rem;
     font-size: 0.9rem;
     cursor: pointer;
+  }
+
+  .button--disabled {
+    opacity: 0.5;
+    cursor: default;
   }
 
   .link {
