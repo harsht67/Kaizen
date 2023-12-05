@@ -30,8 +30,11 @@ export default function Header() {
       </div>
 
       <div className="header__options">
+        
         <CiUser className="header__user-button" />
+    
         <SlBag className="header__cart-button" />
+    
       </div>
 
       <aside className={`header__menu ${menu && 'header__menu--open'}`}>

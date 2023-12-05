@@ -6,7 +6,59 @@ $breakpoints: (
 );
 
 @mixin media($breakpoint) {
-    @media screen and (max-width: map-get($breakpoints, $breakpoint)) {
-        @content;
-    }
+  @media screen and (max-width: map-get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+// form
+
+@mixin form {
+  width: 40%;
+  margin: 2rem auto;
+  border: 1px solid #000;
+  padding: 1rem 2rem 2rem;
+
+  .title {
+    text-align: center;
+    margin-block-end: 2rem;
+  }
+
+  form {
+    display: flex;
+    flex-flow: column;
+    gap: 2rem;
+  }
+
+  label {
+    font-size: 0.9em;
+  }
+
+  input {
+    width: 100%;
+    margin-block: 0.25rem;
+    border: 1px solid #000;
+    padding: 0.5em;
+    font-size: 1rem;
+  }
+
+  .error {
+    color: #f00;
+    font-size: 0.85em;
+  }
+
+  button {
+    border: none;
+    background-color: teal;
+    color: #fff;
+    padding: 0.55rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+
+  .link {
+    font-size: 0.85em;
+    text-align: center;
+    margin-block-start: 2rem;
+  }
 }
