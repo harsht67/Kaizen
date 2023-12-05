@@ -1,0 +1,11 @@
+@import "../../mixins";
+
+.shop {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+
+    @include media(small) {
+        grid-template-columns: 1fr;
+    }
+}

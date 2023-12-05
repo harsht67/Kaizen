@@ -1,20 +1,12 @@
-@mixin nav {
-    ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        gap: 2rem;
-    }
-    li {
-        cursor: pointer;
-        
-        &:hover {
-            text-decoration: underline;
-        }
-    }
-    a {
-        text-decoration: none;
-        color: inherit;
+$breakpoints: (
+  small: 576px,
+  medium: 768px,
+  large: 992px,
+  xlarge: 1200px,
+);
+
+@mixin media($breakpoint) {
+    @media screen and (max-width: map-get($breakpoints, $breakpoint)) {
+        @content;
     }
 }

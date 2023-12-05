@@ -7,8 +7,13 @@
     align-items: center;
     border-block-end: 1px solid #cbcbcb;
 
+    @include media(small) {
+        padding: 1rem;
+    }
+
     .header__logo {
         font-weight: 900;
+
         a {
             text-decoration: none;
             color: inherit;
@@ -16,7 +21,9 @@
     }
 
     .header__nav {
-        @include nav;
+        @include media(small) {
+            display: none;
+        }
     }
 
     .header__options {
@@ -30,6 +37,15 @@
 
         .header__cart-button {
             font-size: 1.3rem;
+        }
+
+        .header__menu-button {
+            font-size: 1.45rem;
+            display: none;
+
+            @include media(small) {
+                display: block;
+            }
         }
 
     }

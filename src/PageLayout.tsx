@@ -1,3 +1,4 @@
+import "./PageLayout.scss";
 import Footer from "./features/Footer/Footer";
 import Header from "./features/Header/Header";
 
@@ -9,7 +10,7 @@ export default function PageLayout({children}: PageLayoutPropType) {
   return (
     <>
         <Header/>
-        <main style={{paddingInline: "5rem"}}>
+        <main>
             {children}
         </main>
         <Footer/>

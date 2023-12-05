@@ -1,8 +1,21 @@
+@import "../../mixins";
+
 .product-page {
     display: grid;
     grid-template-columns: 3fr 2fr;
     gap: 2rem;
 
+    @include media(small) {
+        display: flex;
+        flex-flow: column;
+        margin-block-end: 2rem;
+    }
+
+    .product-page__image {
+        img {
+            width: 100%;
+        }
+    }
 
     .product-page__title {
         font-size: 1.75rem;

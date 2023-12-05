@@ -1,6 +1,6 @@
 import './App.scss';
-import ProductPage from './ProductPage';
-import Shop from './Shop';
+import ProductPage from './features/Product/ProductPage';
+import Shop from './features/Product/Shop';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './features/Home/Home';

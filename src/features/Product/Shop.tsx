@@ -1,9 +1,9 @@
-import PageLayout from "./PageLayout";
+import PageLayout from "../../PageLayout";
 import { Product } from "./Product";
 import "./Shop.scss";
-import LoadingSpinner from "./components/LoadingSpinner/LoadingSpinner";
+import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
 
-import { useFetch } from './hooks/useFetch'
+import { useFetch } from '../../hooks/useFetch'
 
 export interface Product {
     id: string;

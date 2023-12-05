@@ -1,10 +1,10 @@
 import "./ProductPage.scss";
 
 import { useParams } from "react-router-dom";
-import { useFetch } from "./hooks/useFetch";
-import Button from "./components/Button/Button";
-import LoadingSpinner from "./components/LoadingSpinner/LoadingSpinner";
-import PageLayout from "./PageLayout";
+import { useFetch } from "../../hooks/useFetch";
+import Button from "../../components/Button/Button";
+import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
+import PageLayout from "../../PageLayout";
 
 interface Product {
     title: string;
@@ -27,7 +27,7 @@ export default function ProductPage() {
         return <div>{error}</div>
     }
 
-    console.log(data);
+    // console.log(data);
 
     const { image, title, description, price } = data;
 

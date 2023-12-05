@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Product } from "../Shop";
+import { Product } from "../features/Product/Shop";
 
 export const useFetch = <T>(url: string) => {
     const [data, setData] = useState<T>();

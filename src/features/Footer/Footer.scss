@@ -8,7 +8,7 @@
     background-color: #000;
     color: #fff;
 
-    .footer__nav {
-        @include nav;
+    @include media(small) {
+        padding: 1rem;
     }
 }
